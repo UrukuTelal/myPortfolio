@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Andrew Bier</title>
+   <link rel="stylesheet" type="text/css" href="style.css">
+   <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+   <link rel="stylesheet" type="text/css" href="css/animate.css">
+   <link rel="shortcut icon" href="img/fav.ico" type="image/x-icon">
+   <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="" />
+   <meta name="keywords" content=" " />
+   <meta name="author" content="Andrew Bier">
+   <meta name="robots" content="index, follow" />
+</head>
+
+<body>
+   <div class="card animated fadeIn">
+      <center>
+         <img class="center animated rollIn"
+            src="https://scontent.fsac1-2.fna.fbcdn.net/v/t39.30808-6/462190535_8738696789513865_2173488226115340703_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=hrY2f89ux0kQ7kNvgHJl9JN&_nc_ht=scontent.fsac1-2.fna&_nc_gid=Ay3WMjObvf4Xi9UZQJdHKUu&oh=00_AYCFVq1E1jBMQE3h1vSqU10TuXqHdtLZyjBlUP3aIEvWKg&oe=670643C4"
+            alt="A photo of me.">
+      </center>
+
+      <div class="name">Andrew Bier</div>
+      <p class="subtitle">Software Engineer</p>
+
+      <center>
+         <button class="button"><a href="about.html">About Me</a></button>
+         <button class="button">Would you like to play a game?</button>
+         <p>
+            <button class="button" id="asteroidsButton" style="display: none;">
+               <a href="asteroids/index.html">Asteroids</a>
+            </button>
+            <button class="button" id="thermalButton" style="display: none;">
+               <a href="thermalNuclearWar/index.html">Thermal Nuclear War</a>
+            </button>
+         </p>
+      </center>
+
+      <p class="location">
+         <i class="fa fa-map-marker"></i>
+         <a href="https://www.google.com/maps/place/Tower+District,+Fresno,+CA/@36.7557501,-119.8137617,15z/data=!3m1!4b1!4m6!3m5!1s0x8094674e81916eaf:0x9fd7f075d04fcd4f!8m2!3d36.7593304!4d-119.803397!16s%2Fg%2F11gzqhgxf?"
+            target="_blank"> Fresno, Ca - Tower District</a>
+      </p>
+
+      <center>
+         <a href="https://x.com/AndrewBier" target="_blank">
+            <span class="fa-stack fa-lg">
+               <i class="fa fa-circle-thin fa-stack-2x"></i>
+               <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+         </a>
+         <a href="https://www.facebook.com/" target="_blank">
+            <span class="fa-stack fa-lg">
+               <i class="fa fa-circle-thin fa-3x fa-stack-2x"></i>
+               <i class="fa fa-facebook fa-stack-1x"></i>
+            </span>
+         </a>
+         <a href="https://www.instagram.com/" target="_blank">
+            <span class="fa-stack fa-lg">
+               <i class="fa fa-circle-thin fa-stack-2x"></i>
+               <i class="fa fa-instagram fa-stack-1x"></i>
+            </span>
+         </a>
+         <a href="https://github.com/urukutelal" target="_blank">
+            <span class="fa-stack fa-lg">
+               <i class="fa fa-circle-thin fa-stack-2x"></i>
+               <i class="fa fa-github fa-stack-1x"></i>
+            </span>
+         </a>
+      </center>
+   </div>
+
+   <footer class="animated fadeIn">
+      <p class="subtitle">Happy Halloween!</p>
+
+      <h2>Choose your move:</h2>
+      <button class="button" onclick="playGame(1)">Ghost</button>
+      <button class="button" onclick="playGame(2)">Witch</button>
+      <button class="button" onclick="playGame(3)">Vampire</button>
+
+      <div id="result"></div>
+
+      <center>
+         <p id="ifYouWant" style="display: none;">If you want to... 😁</p>
+         <button id="coffeeButton" class="button" style="display: none;">Buy me a Coffee!</button>
+      </center>
+
+      <script>
+         // Show game options when the game button is clicked
+         document.querySelector(".button:nth-child(2)").addEventListener("click", function () {
+            document.getElementById("asteroidsButton").style.display = "block";
+            document.getElementById("thermalButton").style.display = "block";
+            this.style.display = "none"; // Hide the main game button
+         });
+
+         function playGame(player) {
+            const comp = Math.floor(Math.random() * 3) + 1;
+            const choices = ['Ghost', 'Witch', 'Vampire'];
+            document.getElementById('result').innerHTML = `
+                <p>Player: ${choices[player - 1]}</p>
+                <p>Andrew: ${choices[comp - 1]}</p>`;
+
+            let result;
+            if (player === comp) {
+               result = "🙄 Tie! 🙄";
+            } else if ((player === 1 && comp === 3) || (player === 2 && comp === 1) || (player === 3 && comp === 2)) {
+               result = "🎉 You Win! 🎉";
+            } else {
+               result = "😝 I Win! You Owe Me a Coffee! 😝";
+               showIfYouWant = true;
+               showCoffeeButton = true; // Set flag to true if Andrew wins
+            }
+
+            document.getElementById('result').innerHTML += `<p>${result}</p>`;
+            document.getElementById('coffeeButton').style.display = showCoffeeButton ? 'block' : 'none';
+            document.getElementById('ifYouWant').style.display = showIfYouWant ? 'block' : 'none';
+         }
+      </script>
+
+      <br><br>
+      <center>
+         <a href="https://code.org/donate" target="_blank"><button class="button">Donate to my Favorite
+               Charity!</button></a>
+      </center>
+
+      <center>
+         <p>&copy; 2024. Andrew Bier.</p>
+      </center>
+   </footer>
+</body>
+
+</html>

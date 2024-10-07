@@ -1,0 +1,123 @@
+body {
+	text-align: center;
+	color: rgba(255, 128, 0);
+	width: 100%;
+	margin: 0px;
+	background-image: url(../img/bg.jpg);
+	background-repeat: repeat-y no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
+a:visited {
+	color: rgb(255, 128, 0)
+}
+
+a:hover {
+	color: rgb(0, 0, 0)
+}
+
+/* Parent container */
+.parent {
+	display: flex;
+	/* Use flexbox */
+
+	justify-content: center;
+	/* Center horizontally */
+
+}
+
+.card {
+
+	display: flex;
+	padding: 0px;
+	background-color: rgb(0, 0, 0, 0.2);
+	box-shadow: 0 4px 8px 0 rgba(255, 128, 0, 1);
+	transition: 0.3s;
+	width: 35%;
+
+	border-radius: 5px;
+	margin: auto;
+}
+
+.card:hover {
+	box-shadow: 0 8px 16px 0 green;
+}
+
+.left {
+	margin-left: 15%;
+	margin-right: 2%;
+	padding: 2%;
+}
+
+.right {
+	margin-right: 15%;
+	padding: 2%;
+}
+
+.button:hover {
+	box-shadow: 0 8px 16px 0 rgb(0, 255, 47);
+}
+
+.button {
+	text-align: center;
+	color: white;
+	font-size: 1.2em;
+	background-color: rgb(1, 113, 1);
+	margin-left: 1%;
+	margin-right: 1%;
+	border-radius: 8px;
+}
+
+
+/* Board styling */
+.board {
+
+	display: grid;
+	grid-template-columns: repeat(3, 100px);
+	grid-template-rows: repeat(3, 100px);
+	gap: 5px;
+	margin: auto;
+	/* Center horizontally */
+	margin-top: 15%;
+	margin-bottom: 15%;
+
+}
+
+
+.cell {
+
+	width: 100px;
+	height: 100px;
+	background-color: #272525aa;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2em;
+	cursor: pointer;
+}
+
+.cell:hover {
+	background-color: green;
+}
+
+.scoreboard {
+	display: block;
+	margin: auto;
+	font-size: large;
+}
+
+.banner {
+	font-size: xx-large;
+
+}
+
+* {
+	font-family: 'Montserrat', sans-serif;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>About Andrew...</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="shortcut icon" href="img/fav.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Andrew Bier">
+    <meta name="robots" content="index, follow" />
+</head>
+
+<body>
+    <!--Card-->
+
+    <div class="card animated fadeIn about">
+        <button class="button"><a href=index.html>Back</a></button>
+        <div class="title fadeIn">
+            About Me
+        </div>
+
+
+        <p>
+            Hello, <br><br>
+            &nbsp My name is Andrew, but I go by Drew. <br><br>In multiplayer games I'm B334, send a shout if you see
+            me.
+            😎<br><br>
+            &nbsp I'm a lifelong learner, gamer, coder, and space nerd. I'm also a father of one, and your basic
+            hedonistic rat-bastard. 😅 My favorite place is Pismo Beach, and I'm a terrible surfer.<br><br>
+            &nbsp I studied Computer Science at Fresno Community College, and Game Development at Devry University
+            focusing on C++, but I started coding basic when I was nine, and I maintained some websites in high
+            school during the nineties as a side-gig.
+        </p>
+        <br>
+    </div>
+
+    </div>
+    <div class="card animated fadeIn about">
+        <br>
+        <center>
+            <button class="button" onclick="toggleDepressing()">depressing...</button>
+            <p id="depressing" style="display: none;">
+                <button class="button" onclick="toggleVerified()">Are you sure?</button>
+            </p>
+        </center>
+
+
+        <p id="verified" style="display: none;">
+            When my father died of cancer, I took a break from school to take care of my ailing mother, who made
+            it about a year before she also passed. In that same year, I found out I was T1 Diabetic, after
+            I woke up from a DKA coma. Suffice to say, my life went on hold for a number of years as I came to
+            grips with being an orphan and dealing with a disease I knew almost nothing about.
+            <br>
+            <br>
+            But don't pity me, I'm not looking for sympathy, just giving some reference to why at 43 years old I
+            have no professional coding experience.
+        </p>
+
+        <br>
+    </div>
+
+    <script>
+        let showDepressing = false;
+
+        function toggleDepressing() {
+            showDepressing = !showDepressing;
+            document.getElementById('depressing').style.display = showDepressing ? 'block' : 'none';
+            // Hide the verified text when the depressing button is toggled
+            document.getElementById('verified').style.display = 'none';
+        }
+
+        let showVerified = false;
+
+        function toggleVerified() {
+            showVerified = !showVerified;
+            document.getElementById('verified').style.display = showVerified ? 'block' : 'none';
+        }
+    </script>
+
+
+    <div class="card animated fadeIn about">
+        <p>
+            &nbsp However, I resumed my studies, albeit outside of school, and I went back to my web development and
+            picked up HTML 5, (it was 4, back in the '90s 😉), Javascript, and React. Now I'm working on adding
+            Python, and Django to my repertoire, and am developing an Android app to export history data from the
+            FreeStyle Libra apps to help T1 Diabetics, whom use the FreeStyle CGMs to monitor their glucose levels,
+            have an easy way to communicate that history with their doctors and support team. <br><br>
+            &nbsp I'm also working on developing a voxel based space game similar to avorion, but with significant
+            differences, for instance I want player made ships to be able to land on fully destructable voxel
+            planets, moons and asteroids. They will also be able to make bases, mines, and space constructs, upto
+            megastucture scales, like orbital rings and even dyson spheres. (but, this game will probably take me a
+            few years to get to even a fraction of want I want to do with it. 😏)
+        </p>
+        <br>
+    </div>
+
+</body>
